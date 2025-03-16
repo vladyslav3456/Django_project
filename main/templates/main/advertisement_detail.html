@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}{{ advertisement.car_name }}{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/advertisement_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="blue"></div>
+<div class="about-container">
+    <h1>{{ advertisement.car_name }}</h1>
+</div>
+<div class="ad-detail">
+    <div class="image-container">
+        {% if advertisement.photo %}
+            <img id="ph" src="{{ advertisement.photo.url }}" alt="Фото {{ advertisement.car_name }}" width="615">
+        {% endif %}
+    </div>
+    <div class="info-container">
+        <p><strong>Ціна:</strong><span id="price"> {{ advertisement.price }} USD </span> <span id="bo">(≈ {{ advertisement.price_uah }} грн) </span></p>
+        <p><strong>Рік випуску:</strong> {{ advertisement.year_of_production }} </p>
+        <p><strong>Пробіг:</strong> {{ advertisement.mileage }} км</p>
+        <p><strong>Двигун:</strong> {{ advertisement.engine }} </p>
+        <p><strong>Локація:</strong> {{ advertisement.location }} </p>
+        <p><strong>Дата створення:</strong> {{ advertisement.created_at }} </p>
+        <a href="{% url 'main:advertisements' %}" class="btn">Повернутись до оголошень</a>
+    </div>
+    <div id="own">
+        <p id="cont">Контакти продавця:</p>
+        <div id="white">
+            <p id="fir" class="r"><strong>Ім'я:</strong> {{ advertisement.owner }} </p>
+            <p class="r"><strong>Номер телефону:</strong> {{ advertisement.owner_phone_number }} </p>
+            <p class="r"><strong>Пошта:</strong> {{ advertisement.owner.email }} </p>
+        </div>
+    </div>
+</div>
+<div class="blue"></div>
+{% endblock %}

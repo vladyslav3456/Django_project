@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Створення оголошення</title>
+    <link rel="stylesheet" href="{% static 'main/css/create_advertisement.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'main/images/car-side-solid.svg' %}">
+</head>
+<body>
+    <div class="auth-container">
+        <a href="{% url 'main:home' %}">
+            <img id="exit" src="{% static 'users/images/circle-xmark-solid.svg' %}" alt="вихід">
+        </a>
+        <div class="auth-box">
+            <h1>Вас вітає <span class="blue">CarTrade</span>!</h1>
+            <p>Будь ласка, заповніть форму</p>
+            <form action="{% url 'main:create_ad' %}" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.car_name.id_for_label }}">Модель автомобіля</label>
+                    {{ form.car_name }}
+                    {% if form.car_name.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.car_name.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.category.id_for_label }}">Категорія автомобіля</label>
+                    {{ form.category }}
+                    {% if form.category.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.category.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.price.id_for_label }}">Ціна автомобіля (в USD)</label>
+                    {{ form.price }}
+                    {% if form.price.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.price.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.year_of_production.id_for_label }}">Рік випуску автомобіля</label>
+                    {{ form.year_of_production }}
+                    {% if form.year_of_production.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.year_of_production.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.mileage.id_for_label }}">Пробіг (км)</label>
+                    {{ form.mileage }}
+                    {% if form.mileage.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.mileage.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.engine.id_for_label }}">Тип двигуна</label>
+                    {{ form.engine }}
+                    {% if form.engine.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.engine.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.location.id_for_label }}">Локація</label>
+                    {{ form.location }}
+                    {% if form.location.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.location.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.owner.id_for_label }}">Ініціали продавця</label>
+                    {{ form.owner }}
+                    {% if form.owner.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.owner.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div id="phone" class="form-group">
+                    <label for="{{ form.owner_phone_number.id_for_label }}">Номер телефону продавця</label>
+                    {{ form.owner_phone_number }}
+                    {% if form.owner_phone_number.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.owner_phone_number.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div id="file" class="form-group">
+                    <label for="{{ form.photo.id_for_label }}">Фото автомобіля</label>
+                    {{ form.photo }}
+                    {% if form.photo.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.photo.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="button-container">
+                    <button type="submit" class="btn">Подати оголошення</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

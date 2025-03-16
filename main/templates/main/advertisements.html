@@ -1,0 +1,105 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Оголошення{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'main/css/advertisements.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="blue"></div>
+<div class="about-container">
+    <div id="t" class="ic">
+        <h1 id="ads">Наявні оголошення</h1>
+        <div id="c">
+            <p id="ccc"> {{ count_text }} </p>
+        </div>
+    </div>
+</div>
+<div class="ic">
+<div class="ads-container">
+    {% for ad in advertisements %}
+        <div class="ad-card">
+            <div class="ad-text">
+                <h2> {{ ad.car_name }} </h2>
+                <p id="first"><strong>Ціна:</strong><span> {{ ad.price }} USD </span> <span id="bl">(≈ {{ ad.price_uah }} грн) </span></p>
+                <div class="data">
+                    <div id="one">
+                        <div class="ic">
+                            <img id="yy" src="{% static 'main/images/calendar-days-solid.svg' %}" alt="рік"><p id="yy2"><strong>Рік випуску:</strong> {{ ad.year_of_production }} р.</p>
+                        </div>
+                        <div class="ic">
+                            <img id="rr" src="{% static 'main/images/road-solid.svg' %}" alt="пробіг"><p id="rr2"><strong>Пробіг:</strong> {{ ad.mileage }} км.</p>
+                        </div>
+                    </div>
+                    <div id="two">
+                        <div class="ic">
+                            <img id="ee" src="{% static 'main/images/gas-pump-solid.svg' %}" alt="двигун"><p id="ee2"><strong>Двигун:</strong> {{ ad.engine }}</p>
+                        </div>
+                        <div class="ic">
+                            <img id="ll" src="{% static 'main/images/location-dot-solid.svg' %}" alt="локація"><p id="ll2"><strong>Локація:</strong> {{ ad.location }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ic">
+                    <img id="tt" src="{% static 'main/images/clock-regular.svg' %}" alt="час"><p id="last"> {{ ad.created_at }} </p>
+                </div>
+            </div>
+            <button class="id"><a href="#">Дізнатись більше</a></button>
+            {% if ad.photo %}
+                <div class="ad-photo">
+                    <img id="car" src="{{ ad.photo.url }}" alt="Фото {{ ad.car_name }}" width="450">
+                </div>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p id="txt">Жодного оголошення не було знайдено.</p>
+    {% endfor %}
+</div>
+    <div id="fil">
+        <h3>Фільтри</h3>
+        <form method="GET" action="{% url 'main:advertisements' %}">
+            <p id="pr">Ціна (в USD):</p>
+            <div class="ic">
+                <p class="ot">Від</p>
+                <input type="number" name="min_price" value="{{ min_price }}" min="0" step="1">
+                <p class="ot">До</p>
+                <input type="number" name="max_price" value="{{ max_price }}" min="0" step="1">
+            </div>
+            <div class="ic">
+                <p id="catg">Категорія:</p>
+                <select name="category" id="id_category">
+                    <option value="" {% if not category %}selected{% endif %}>---------</option>
+                    <option value="sedan" {% if category == "sedan" %}selected{% endif %}>Седан</option>
+                    <option value="jeep" {% if category == "jeep" %}selected{% endif %}>Позашляховик</option>
+                    <option value="pickup" {% if category == "pickup" %}selected{% endif %}>Пікап</option>
+                    <option value="van" {% if category == "van" %}selected{% endif %}>Фургон</option>
+                    <option value="truck" {% if category == "truck" %}selected{% endif %}>Вантажівка</option>
+                </select>
+            </div>
+            <p id="year">Рік випуску:</p>
+            <div class="ic">
+                <p class="ot">Від</p>
+                <input type="number" name="min_year" value="{{ min_year }}" min="1990" max="2025" step="1">
+                <p class="ot">До</p>
+                <input type="number" name="max_year" value="{{ max_year }}" min="1990" max="2025" step="1">
+            </div>
+            <p id="mile">Пробіг (в км):</p>
+            <div class="ic">
+                <p class="ot">Від</p>
+                <input type="number" name="min_miles" value="{{ min_miles }}" min="0" step="1">
+                <p class="ot">До</p>
+                <input type="number" name="max_miles" value="{{ max_miles }}" min="0" step="1">
+            </div>
+            <p id="place">Розташування:</p>
+            <div class="ic">
+                <p class="ot">Місто</p>
+                <input id="pp" type="text" name="location" value="{{ location|default:'' }}" placeholder="Введіть місто">
+            </div>
+            <button id="but" type="submit">Застосувати фільтри</button>
+            <button id="but_2"><a href="{% url 'main:advertisements' %}">Скинути фільтри</a></button>
+        </form>
+    </div>
+</div>
+{% endblock %}

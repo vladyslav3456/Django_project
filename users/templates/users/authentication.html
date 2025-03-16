@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аутентифікація</title>
+    <link rel="stylesheet" href="{% static 'users/css/authentication.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'main/images/car-side-solid.svg' %}">
+</head>
+<body>
+    <div class="auth-container">
+        <a href="{% url 'main:home' %}">
+            <img id="exit" src="{% static 'users/images/circle-xmark-solid.svg' %}" alt="вихід">
+        </a>
+        <div class="auth-box">
+            <h1>Вас вітає <span class="blue">CarTrade</span>!</h1>
+            <p>Будь ласка, зайдіть до свого аккаунта</p>
+            <form action="{% url 'users:authentication' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">Логін</label>
+                    {{ form.username }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.password.id_for_label }}">Пароль</label>
+                    <div class="password-container">
+                        {{ form.password }}
+                        <button type="button" class="toggle-password">️👁️</button>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Увійти</button>
+                {% if form.non_field_errors %}
+                    <div class="error">
+                        <p>Користувача з таким логіном та паролем не знайдено. Спробуйте, будь ласка, ще раз.</p>
+                    </div>
+                {% endif %}
+            </form>
+            <div class="options">
+                <a href="{% url 'users:password_reset' %}">Забули свій пароль?</a>
+                <div class="quest">
+                    <p>Досі не зареєстровані?</p>
+                    <div class="reg">
+                        <a href="{% url 'users:registration' %}">Зареєструватися</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'users/js/toggle_password.js' %}"></script>
+</body>
+</html>

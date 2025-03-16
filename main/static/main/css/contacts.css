@@ -1,0 +1,42 @@
+#contacts {
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin: 20px 0;
+    padding-bottom: 10px;
+}
+
+.contacts-container {
+    max-width: 1260px;
+    height: 627px;
+    margin: 0 auto;
+    padding: 20px 15px;
+    background-color: white;
+}
+
+.contacts-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 26px;
+}
+
+.contacts-content section {
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.contacts-content section h2 {
+    font-size: 22px;
+    color: black;
+    margin-bottom: 10px;
+    border-left: 4px solid #007bff;
+    padding-left: 10px;
+}
+
+.contacts-content section p {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.6;
+}

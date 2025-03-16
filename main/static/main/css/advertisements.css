@@ -1,0 +1,264 @@
+#ads {
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+.ad-card {
+    display: flex;
+    align-items: flex-start;
+    height: 351.5px;
+    width: 1200px;
+    padding: 33px 30px;
+    margin: 30px;
+    border: 3px solid mediumblue;
+    border-radius: 28px;
+}
+
+.ads-container {
+    width: 1230px;
+}
+
+.ad-text {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.ad-photo img {
+    max-width: 100%;
+    height: auto;
+}
+
+h2 {
+    color: #0056b3;
+    font-size: 38px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-top: 25px;
+    margin-left: 96px;
+    padding-bottom: 13px;
+}
+
+#first {
+    margin-top: 30px;
+    font-size: 22px;
+}
+
+.data {
+    display: flex;
+    padding-top: 25px;
+    font-size: 16.5px;
+}
+
+.data p {
+    padding-top: 15px;
+}
+
+#one {
+    width: 245px;
+}
+
+#two {
+    margin-left: 12px;
+}
+
+#last {
+    margin-top: 44px;
+    margin-left: 10px;
+    color: dimgrey;
+    font-size: 18px;
+}
+
+#tt {
+    margin-top: 35px;
+    width: 35px;
+}
+
+#yy {
+    width: 28px;
+}
+
+#yy2 {
+    padding-top: 9.5px;
+    margin-left: 10px;
+}
+
+.ic {
+    display: flex;
+}
+
+#ll {
+    margin-top: 12px;
+    width: 25px;
+}
+
+#ll2 {
+    padding-top: 21px;
+    margin-left: 10px;
+}
+
+#rr {
+    margin-top: 21px;
+    width: 30px;
+}
+
+#rr2 {
+    padding-top: 26px;
+    margin-left: 10px;
+}
+
+#ee {
+    padding-top: 4.5px;
+    width: 30px;
+}
+
+#ee2 {
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+span {
+    color: dodgerblue;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#bl {
+    color: dimgrey;
+}
+
+.id {
+    margin-right: 49.5px;
+    width: 140px;
+    margin-top: 115px;
+}
+
+#fil {
+    border: 3px solid black;
+    margin: 30px;
+    border-radius: 28px;
+    width: 302px;
+    height: 538px;
+}
+
+#pr {
+    margin-left: 12px;
+    margin-top: 12px;
+}
+
+input {
+    width: 96.5px;
+    margin-left: 6px;
+    margin-top: 12.5px;
+    height: 25px;
+    color: #333333;
+    border: 1px solid #d1d5db;
+    padding: 10px 8.5px;
+    outline: none;
+    transition: border-color 0.3s;
+    border-radius: 10px;
+}
+
+input:focus {
+    border: 1px solid #3b82f6;
+    border-radius: 10px;
+}
+
+select {
+    width: 181px;
+    margin-top: 14.5px;
+    margin-left: 6px;
+    height: 25px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 2px 5px;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    border: 1.2px solid #3b82f6;
+}
+
+.ot {
+    margin-left: 12px;
+    margin-top: 15px;
+}
+
+#but {
+    margin-left: 39px;
+    margin-top: 25px;
+    font-size: 16px;
+}
+
+#but_2 {
+    margin-left: 55px;
+    margin-top: 15px;
+    font-size: 16px;
+    background-color: forestgreen;
+}
+
+#txt {
+    margin-left: 35px;
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+#catg {
+    margin-left: 12px;
+    margin-top: 17.5px;
+}
+
+#year {
+    margin-left: 12px;
+    margin-top: 15px;
+}
+
+#mile {
+    margin-left: 12px;
+    margin-top: 15px;
+}
+
+#place {
+    margin-left: 12px;
+    margin-top: 15px;
+}
+
+#pp {
+    width: 213px;
+    height: 26px;
+}
+
+#car {
+    border-radius: 15px;
+    margin-top: 1.5%;
+    border: 3px solid mediumblue;
+}
+
+#bl_l {
+    width: 1584.9px;
+}
+
+#ccc {
+    font-size: 18.5px;
+    text-align: center;
+    color: white;
+    padding: 12px;
+}
+
+#c {
+    margin-left: 9px;
+    margin-top: 40px;
+    width: 266px;
+    height: 45px;
+    background-color: royalblue;
+    border-radius: 25px;
+}
+
+#t {
+    justify-content: center;
+}

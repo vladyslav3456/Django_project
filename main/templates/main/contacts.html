@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Контакти{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{% static 'main/css/contacts.css' %}">{% endblock %}
+
+{% block content %}
+<div class="blue"></div>
+<div class="contacts-container">
+    <h1 id="contacts">Наші контакти</h1>
+    <div class="contacts-content">
+        <section class="contact-info">
+            <h2>Як з нами зв’язатися?</h2>
+            <p><strong>Телефон:</strong> +1 (555) 123-4567</p>
+            <p><strong>Email:</strong> support@cartrade.com</p>
+            <p><strong>Адреса:</strong> 123 CarTrade Street, New York, NY, USA</p>
+        </section>
+    </div>
+</div>
+<div class="blue"></div>
+{% endblock %}

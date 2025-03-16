@@ -1,0 +1,219 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #e6e4e5;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    max-width: 1296px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    border-radius: 16px;
+}
+
+#exit {
+    position: absolute;
+    top: 16.6%;
+    right: 10.3%;
+    width: 33px;
+    cursor: pointer;
+}
+
+#exit:hover {
+    transform: scale(1.07);
+}
+
+.auth-box {
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 10px;
+    margin-top: -17px;
+    font-size: 25.5px;
+    color: black;
+}
+
+.blue {
+    color: mediumblue;
+}
+
+p {
+    margin-bottom: 35px;
+    color: #555555;
+    font-size: 19px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Створюємо 4 стовпці */
+    gap: 17.5px 65.5px; /* Відступи між елементами */
+    max-width: 785px;
+}
+
+.form-group {
+    width: 260px;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 280px;
+    height: 41.5px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 2px 5px;
+    transition: border-color 0.3s;
+}
+
+select:focus {
+    border: 1.2px solid #3b82f6;
+}
+
+#phone {
+    left: 325.5px;
+}
+
+#file {
+    left: 338px;
+}
+
+.form-group:nth-child(even) {
+    margin-left: 12.5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    float: left;
+    font-size: 18px;
+    padding-left: 10.5px;
+    color: #555555;
+}
+
+input {
+    width: 100%; /* Встановлюємо ширину на 100% для заповнення поля */
+    padding: 10px 8.5px;
+    height: 20.5px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 14px;
+    color: #333333;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border: 1px solid #3b82f6;
+    border-radius: 10px;
+}
+
+.btn {
+    width: 50.2%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    margin-top: 8px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover, .view-requests:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.button-container {
+    grid-column: span 4;
+    display: flex;
+    padding-left: 35.5px;
+    justify-content: center;
+    margin-top: 7px;
+}
+
+.options {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.toggle-password {
+    position: absolute;
+    top: 14%;
+    right: 23px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.toggle-password-er {
+    position: absolute;
+    top: 8%;
+    right: 23px;
+    background: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.toggle-password:hover, .toggle-password-er:hover {
+    background: white;
+    transform: scale(1.15);
+    outline: none;
+    box-shadow: none;
+    background: none;
+}
+
+.error p {
+    color: red;
+    font-size: 15.7px;
+    padding-top: 9px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.errorlist {
+    list-style-type: none;
+    padding: 0;
+    width: 278px;
+    margin: 0;
+    color: red;
+    font-size: 0.9em;
+}
+
+.errorlist li {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.error-message {
+    font-weight: normal;
+    display: inline-block;
+    width: 100%;
+}

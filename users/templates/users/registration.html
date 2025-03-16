@@ -1,0 +1,130 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Реєстрація</title>
+    <link rel="stylesheet" href="{% static 'users/css/registration.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'main/images/car-side-solid.svg' %}">
+</head>
+<body>
+    <div class="auth-container">
+        <a href="{% url 'main:home' %}">
+            <img id="exit" src="{% static 'users/images/circle-xmark-solid.svg' %}" alt="вихід">
+        </a>
+        <div class="auth-box">
+            <h1>Вас вітає <span class="blue">CarTrade</span>!</h1>
+            <p>Будь ласка, зареєструйтесь</p>
+            <form action="{% url 'users:registration' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">Логін</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.username.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">Пошта</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.email.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.first_name.id_for_label }}">Ім'я</label>
+                    {{ form.first_name }}
+                    {% if form.first_name.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.first_name.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.last_name.id_for_label }}">Прізвище</label>
+                    {{ form.last_name }}
+                    {% if form.last_name.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.last_name.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.password1.id_for_label }}">Пароль</label>
+                    <div class="password-container">
+                        {{ form.password1 }}
+                        {% if form.password1.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.password1.errors %}
+                                    <li class="error-message">{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        <button type="button" class="toggle-password-er">️️️👁️</button>
+                        {% else %}
+                        <button type="button" class="toggle-password">️️️👁️</button>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.password2.id_for_label }}">Пароль (підтвердження)</label>
+                    <div class="password-container">
+                        {{ form.password2 }}
+                        {% if form.password2.errors %}
+                            <ul class="errorlist">
+                                {% for error in form.password2.errors %}
+                                    <li class="error-message">{{ error }}</li>
+                                {% endfor %}
+                            </ul>
+                        <button type="button" class="toggle-password-er">️️️👁️</button>
+                        {% else %}
+                        <button type="button" class="toggle-password">️️️👁️</button>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.phone_number.id_for_label }}">Номер телефону</label>
+                    {{ form.phone_number }}
+                    {% if form.phone_number.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.phone_number.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <label for="{{ form.age.id_for_label }}">Вік</label>
+                    {{ form.age }}
+                    {% if form.age.errors %}
+                        <ul class="errorlist">
+                            {% for error in form.age.errors %}
+                                <li class="error-message">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+                {% if form.non_field_errors %}
+                    <div class="error">
+                        <p>Під час реєстрації виникла помилка. Спробуйте, будь ласка, ще раз.</p>
+                    </div>
+                {% endif %}
+                <button type="submit" class="btn">Зареєструватись</button>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'users/js/toggle_new_password.js' %}"></script>
+    <script src="{% static 'users/js/toggle_new_password_2.js' %}"></script>
+</body>
+</html>

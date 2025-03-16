@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/index.css' %}">
+    {% block css %}{% endblock %}
+    <link rel="icon" type="image/png" href="{% static 'main/images/car-side-solid.svg' %}">
+</head>
+<body>
+    <div class="main-container">
+        <div class="menu-container">
+            <ul class="menu">
+                <li id="brand"><a href="{% url 'main:home' %}">CarTrade</a></li>
+                <li class="icon {% if request.path == '/' %}active{% endif %}">
+                    <a href="{% url 'main:home' %}"><img src="{% static 'main/images/house-solid.svg' %}" alt="головна">Головна</a>
+                </li>
+                <li class="icon {% if request.path == '/about/' %}active{% endif %}">
+                    <a href="{% url 'main:about' %}"><img src="{% static 'main/images/shop-solid.svg' %}" alt="про нас">Про нас</a>
+                </li>
+                <li class="icon {% if request.path == '/advertisements/' %}active{% endif %}">
+                    <a href="{% url 'main:advertisements' %}"><img src="{% static 'main/images/car-solid.svg' %}" alt="наявні авто">Наявні авто</a>
+                </li>
+                <li class="icon {% if request.path == '/contacts/' %}active{% endif %}">
+                    <a href="{% url 'main:contacts' %}"><img src="{% static 'main/images/list-ul-solid.svg' %}" alt="контакти">Контакти</a>
+                </li>
+                <li class="icon {% if request.path == '/authentication/' %}active{% endif %}">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'main:home' %}"><img id="user" src="{% static 'users/images/user-solid.svg' %}" alt="користувач">{{ user.username }}</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'users:profile' %}">Переглянути профіль</a></li>
+                        <li><a href="{% url 'users:logout' %}">Вийти</a></li>
+                    </ul>
+                    {% else %}
+                    <a href="{% url 'users:authentication' %}"><img src="{% static 'main/images/address-book-solid.svg' %}" alt="увійти">Увійти</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+        <div class="text-block">
+            <p>Курс USD до UAH:</p>
+            <div class="rate">
+                <img id="dollar" src="{% static 'main/images/dollar-solid.svg' %}" alt="услуги"><p>{{ rate }} грн</p>
+            </div>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+    <div class="footer">
+        <p>© 2025 - CarTrade. Усі права захищено.</p>
+    </div>
+</body>
+</html>

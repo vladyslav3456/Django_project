@@ -1,0 +1,105 @@
+h1 {
+    font-size: 36px;
+    color: black;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+}
+
+.ad-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    height: 536px;
+    padding: 30px;
+}
+
+.image-container {
+    flex-shrink: 0;
+}
+
+#ph {
+    border-radius: 20.5px;
+    border: 3.5px solid black;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    font-size: 18px;
+    margin-top: 47px;
+    margin-left: 12px;
+}
+
+#own {
+    width: 325.5px;
+    height: 156.5px;
+    border: 2.5px solid mediumblue;
+    border-radius: 20.5px;
+    margin-top: 50px;
+    margin-left: 86px;
+    background-color: lightskyblue;
+}
+
+#cont {
+    margin-top: 14px;
+    margin-left: 70.5px;
+    font-size: 20px;
+    color: black;
+}
+
+#white {
+    width: 300px;
+    margin-top: 14px;
+    margin-left: 10px;
+    height: 90.5px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.r {
+    margin-top: 9px;
+    margin-left: 10px;
+}
+
+#fir {
+    padding-top: 9px;
+}
+
+.btn {
+    width: 286.7px;
+    padding-left: 20px;
+    padding-top: 12px;
+    height: 45px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    margin-top: 18.5px;
+    margin-left: 37.5px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.btn:hover, .view-requests:hover {
+    background-color: #0056b3;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.025);
+}
+
+#price {
+    color: dodgerblue;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#bo {
+    font-weight: bold;
+    color: dimgrey;
+}

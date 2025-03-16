@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+<div class="blue"></div>
+    <div class="text">
+        <div class="buy">
+            <p>Купуй чи продавай авто</p>
+            <p>разом з нами.</p>
+        </div>
+        <div class="slang">
+            <p> {{ users_text }} </p>
+            <p>щодо продажу авто на нашому сайті.</p>
+            <button class="view-requests"><a href="{% url 'main:advertisements' %}">Переглянути оголошення</a></button>
+        </div>
+    </div>
+    <div class="blue"></div>
+    <div class="question">
+        <img id="run" src="{% static 'main/images/run_car.jpg' %}">
+        <div id="phrase">
+            {% if user.is_authenticated %}
+            <p>Також хочеш подати оголошення, але все ще не зробив це?</p><br>
+            <button><a href="{% url 'main:create_ad' %}">Подати оголошення</a></button>
+            {% else %}
+            <p>Хочеш подати своє оголошення, але досі не маєш особистого кабінету?</p><br>
+            <button><a href="{% url 'users:registration' %}">Зареєструватися</a></button>
+            {% endif %}
+        </div>
+        <img id="key" src="{% static 'main/images/key.jpg' %}">
+    </div>
+{% endblock %}
