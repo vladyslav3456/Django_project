@@ -46,7 +46,7 @@
                     <img id="tt" src="{% static 'main/images/clock-regular.svg' %}" alt="час"><p id="last"> {{ ad.created_at }} </p>
                 </div>
             </div>
-            <button class="id"><a href="#">Дізнатись більше</a></button>
+            <button class="id"><a href="{% url 'main:advertisement_detail' ad.id %}">Дізнатись більше</a></button>
             {% if ad.photo %}
                 <div class="ad-photo">
                     <img id="car" src="{{ ad.photo.url }}" alt="Фото {{ ad.car_name }}" width="450">
