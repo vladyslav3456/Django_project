@@ -8,7 +8,7 @@
 
 .contacts-container {
     max-width: 1260px;
-    height: 627px;
+    height: 295px;
     margin: 0 auto;
     padding: 20px 15px;
     background-color: white;
@@ -39,4 +39,14 @@
     font-size: 20px;
     color: #555;
     line-height: 1.6;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    padding: 25px 28px;
+}
+
+iframe {
+    border-radius: 25px;
 }
