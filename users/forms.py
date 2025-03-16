@@ -96,3 +96,11 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username', 'email', 'phone_number', 'age']
+        widgets = {
+            'first_name': forms.TextInput(attrs={'readonly': 'readonly'}),
+            'last_name': forms.TextInput(attrs={'readonly': 'readonly'}),
+            'username': forms.TextInput(attrs={'readonly': 'readonly'}),
+            'email': forms.EmailInput(attrs={'readonly': 'readonly'}),
+            'phone_number': forms.TextInput(attrs={'readonly': 'readonly'}),
+            'age': forms.NumberInput(attrs={'readonly': 'readonly'}),
+        }
