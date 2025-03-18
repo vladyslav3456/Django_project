@@ -1,9 +1,7 @@
 import requests
 
-# Ваш API ключ із Currency Freaks
 API_KEY = "b867a8218d174ff2916773813d472a3f"
 
-# Базовий URL API
 BASE_URL = "https://api.currencyfreaks.com/latest"
 
 
